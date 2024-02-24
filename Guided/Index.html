@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SignIn|TaskMaster</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
+</head>
+<body>
+  <div>
+    <header>
+<img src="images/logo.png" alt="Logo">
+<a href="signUp.html"><button class="btn" id="signUp">SignUp</button></a>
+    </header>
+    <div class="main">
+      <div class="left">
+        <div class="text">
+          <p>welcome to</p> 
+          <h1>TaskMaster</h1>
+         <span><p>not just a do list</p></span> 
+        </div>
+     
+
+      </div>
+      <div class="right">
+        <form action="Dashboard.html" id="form">
+          <input type="text" name="email" id="email" placeholder="Email">
+          <input type="password" name="password" id="password" placeholder="Password">
+          <input type="submit" value="log in" class="btn" id="logIn">
+        </form> 
+
+      </div>
+    </div>
+  </div>
+  <script >
+document.addEventListener('DOMContentLoaded', () => {
+   
+  const form = document.getElementById('form');
+const email = document.getElementById('email');
+const password = document.getElementById('password');
+
+form.addEventListener('submit', e => {
+    e.preventDefault();
+    validateInputs();
+});
+
+const setError = (element) => {
+    element.style.borderBottomColor = 'red';
+}
+
+const setSuccess = (element) => {
+    element.style.borderBottomColor = 'black'; // Change this to the default border color
+}
+
+const isValidEmail = (email) => {
+    const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(String(email).toLowerCase());
+}
+
+const validateInputs = () => {
+    const emailValue = email.value.trim();
+    const passwordValue = password.value.trim();
+
+    if(emailValue === '') {
+        setError(email);
+    } else if (!isValidEmail(emailValue)) {
+        setError(email);
+    } else {
+        setSuccess(email);
+    }
+
+    if(passwordValue === '' || passwordValue.length < 8) {
+        setError(password);
+    } else {
+        setSuccess(password);
+    }
+}
+});
+
+  </script>
+</body>
+</html>
