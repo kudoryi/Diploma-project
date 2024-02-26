@@ -1,0 +1,122 @@
+
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600&family=Italiana&display=swap');
+ 
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+  font-family: 'Italiana', sans-serif;
+}
+body{
+  display: grid;
+  height: 100vh;
+  
+}
+header , .nav-dash{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color:#6DC8AD ;
+
+}
+.nav-dash{
+  height: 65px;
+}
+header img{
+  height: 65px;
+  width: 70px;
+  margin:10px;
+  
+}
+header button , .btn{
+  width: 100px;
+  height: 40px;
+  background-color:#1b2e2b ;
+  color: #ffffff;
+  border: none;
+  /* border-radius: 5px; */
+}
+#signUp{
+  margin-right: 10px;
+}
+#logIn ,a {
+  align-self: center;
+}
+.main{
+  display: flex;
+   
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  background-color: #384E4B;
+}
+.left{
+    width: 45%;
+  height: 70%;
+  background-color: #1B2E2B;
+  text-align: center;
+  color: #ffffff;
+  padding: 20px;
+
+  
+}
+.text{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: center;
+}
+.text h1{
+  font-family: 'Italiana', sans-serif;}
+.right{
+  width: 45%;
+  height: 70%;
+  background-color: #6DC8AD;
+  
+}
+
+.right form{
+  display: flex;
+  flex-direction: column;
+  height: 75%;
+  justify-content: space-around;
+  margin-top: 30px;
+
+} 
+input{
+  
+  height: 30px;
+  margin-right:20px ;
+  margin-left: 20px;
+  background-color: rgba(217, 217, 217,0.2);
+  border-top: none;
+  border-left: none;
+  border-right: none;
+}
+  input::placeholder{
+    color: black;
+    font-weight: 700;
+  }
+
+  @media screen and (max-width: 600px) 
+  {
+    .main{
+      flex-direction: column;
+
+    }
+    .right{
+      width: 100%;
+      height: 50%dvh;
+    }
+    .left{
+      width: 100%;
+      height: 50%dvh;
+    }
+    form{
+      
+      gap: 25px;
+    }
+  }
